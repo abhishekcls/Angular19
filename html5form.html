@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <header>
+        <h1>KPMG Registration</h1>
+    </header>
+    <nav>
+        <a href=""></a>
+    </nav>
+    <figure>
+        <img src="lotus.gif" height="100" width="150" />
+        <figcaption>Lotus</figcaption>
+    </figure>
+
+    <main>
+        <form>
+            <table>
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" name="uname" minlength="2" maxlength="10" required/></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" min="10" max="75" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td>DOJ</td>
+                    <td><input type="date" name="doj" /></td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td><input type="url" name="website" /></td>
+                </tr>
+                <tr>
+                    <td>FavColor</td>
+                    <td><input type="color" name="favcolor" /></td>
+                </tr>
+                <tr>
+                    <td><label for="browser">Choose your browser from the list:</label></td>
+                    <td>
+                        
+                        <input list="browsers" name="browser" id="browser">
+                        
+                        <datalist id="browsers">
+                          <option value="Edge"/>
+                          <option value="Firefox"/>
+                          <option value="Chrome"/>
+                          <option value="Opera"/>
+                          <option value="Safari"/>
+                        </datalist>
+                    </td>
+                </tr>
+              
+                <tr>
+                    <td>Pass</td>
+                    <td><input type="password" name="pass" /></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        Male<input type="radio" name="gender" value="male" />
+                        Female<input type="radio" name="gender" value="female" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td>
+                        <input type="checkbox" name="read" />Read
+                        <input type="checkbox" name="write" />Write
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea name="address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Qual</td>
+                    <td>
+                        <select name="qual">
+                            <option>Grad</option>
+                            <option>PG</option>
+                            <option>PhD</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Resume</td>
+                    <td><input type="file" name="resume" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="click1" /></td>
+                    <td><button>click2</button></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" /></td>
+                    <td><input type="submit" value="Save" /></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>

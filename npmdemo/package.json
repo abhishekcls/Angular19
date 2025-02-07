@@ -1,0 +1,14 @@
+{
+  "name": "npmdemo",
+  "version": "1.0.0",
+  "description": "KPMG npm demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek Samanta",
+  "license": "ISC",
+  "devDependencies": {
+    "underscore": "^1.8.2"
+  }
+}

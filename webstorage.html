@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <h1 id="myh1">Hello</h1>
+    <h1>sessionStorage</h1>
+    <button onclick="sessionStorage.setItem('name','Abhishek')">setItem</button>
+    <button onclick="document.getElementById('myh1').innerHTML=sessionStorage.getItem('name')">getItem</button>
+    <button onclick="sessionStorage.removeItem('name')">removeItem</button>
+
+    <h1>localStorage</h1>
+    <button onclick="localStorage.setItem('lname','Samanta')">setItem</button>
+    <button onclick="document.getElementById('myh1').innerHTML=localStorage.getItem('lname')">getItem</button>
+    <button onclick="localStorage.removeItem('lname')">removeItem</button>
+</body>
+</html>

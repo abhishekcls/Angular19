@@ -1,0 +1,9 @@
+<Customers>
+<Customer>
+	<Name>ABC</Name>
+    <Phone Office="74677858"/>
+</Customer>
+<Customer>
+	<Name>XYZ</Name>
+</Customer>
+</Customers>
