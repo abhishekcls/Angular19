@@ -1,0 +1,18 @@
+<p>detailapi works!</p>
+<form #idform="ngForm" (ngSubmit)="submit(idform.value)">
+    <input type="number" placeholder="id" name="id" min="1" max="10" ngModel required/><br/>
+    <input type="submit" [disabled]="idform.invalid"/><br/>
+</form>
+{{userdata | json}}
+
+<img src="https://appbucket22.s3.us-east-1.amazonaws.com/lotus.gif" height="150" width="100"/>
+<img src="{{path}}" height="150" width="100"/>
+<img [src]="path" height="150" width="100"/>
+<img bind-src="path" height="170" width="100"/>
+
+<img src="{{basepath}}/lotus.gif" height="150" width="100"/>
+<img src="{{basepath}}/rose.gif" height="150" width="100"/>
+
+<button disabled="{{flag}}">click1</button>
+<button [disabled]="flag" (click)="show()">click2</button>
+<button bind-disabled="flag" on-click="show()">click</button>

@@ -1,4 +1,11 @@
-<h1>Hello KPMG Angular19 Demo by {{name}}</h1>
+<h1 id="head">Hello KPMG Angular19 Demo by {{name}}</h1>
+<app-detailapi></app-detailapi>
+<app-callapi></app-callapi>
+<app-rform></app-rform>
+<app-tform></app-tform>
+
+
+<h1 class="c1">Hello {{nname}}</h1>
 {{games}}
 <ol>
     <li *ngFor="let g of games">{{g}}</li>
@@ -14,7 +21,7 @@
         <td>{{e.ename | slice:2}}</td>
         <td>{{e.ename | slice:2:4}}</td>
         <td>{{e.gender | gen}}</td>
-        <td>{{e.sal}}</td>
+        <td [ngClass]="{'high':e.sal>75000,'low':e.sal<=75000}">{{e.sal}}</td>
         <td>{{e.sal | number}}</td>
         <td>{{e.sal | currency}}</td>
         <td>{{e.sal | currency:"INR"}}</td>
@@ -24,12 +31,18 @@
         <td>{{e.doj | date}}</td>
         <td>{{e.doj | date:"d/M/y"}}</td>
         <td>
-            <img *ngIf="e.retired" src="https://www.icegif.com/wp-content/uploads/2022/04/icegif-931.gif" height="100"
+            <img *ngIf="e.retired; else notretired" src="https://www.icegif.com/wp-content/uploads/2022/04/icegif-931.gif" height="100"
                 width="150" />
-            <img *ngIf="!e.retired" src="https://i.pinimg.com/originals/d9/98/d1/d998d123da2480eb9fa1baded88830e1.gif"
+            <ng-template #notretired>
+                <img src="https://i.pinimg.com/originals/d9/98/d1/d998d123da2480eb9fa1baded88830e1.gif"
                 height="100" width="100" />
+            </ng-template>
+            <span [ngSwitch]="e.retired">
+                <img *ngSwitchCase="true" src="https://media0.giphy.com/media/3OpJMkI3B6aWIXbVz4/source.gif" height="100" width="100" alt="True Image">
+                <img *ngSwitchCase="false" src="https://appbucket22.s3.us-east-1.amazonaws.com/rose.gif" height="100" width="100" alt="False Image">
+            </span>
         </td>
     </tr>
 </table>
-<h1>Hello {{nname}}</h1>
+
 <nested *ngFor="let e of emps" [emp]="e" (myevent)="nname=$event"></nested>

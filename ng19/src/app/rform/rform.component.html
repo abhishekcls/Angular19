@@ -1,0 +1,16 @@
+<h2>Reactive Form</h2>
+
+<form [formGroup]="emprform" (ngSubmit)="submit(emprform.value)">
+    <input type="text" placeholder="eid" formControlName="eid" required>&nbsp;
+    <span *ngIf="emprform.controls['eid'].errors?.['required']" style="color: red;">Plz fill eid</span>
+    <span *ngIf="emprform.controls['eid'].errors?.['veid']" style="color: red;">Plz fill eid between {{emprform.controls['eid'].errors?.['veid'].min}} to {{emprform.controls['eid'].errors?.['veid'].max}}</span>
+    <br/>
+    <input type="text" placeholder="ename" formControlName="ename" />&nbsp;
+    <span *ngIf="emprform.controls['ename'].errors?.['required']" style="color: red;">Plz fill ename</span>
+    <span *ngIf="emprform.controls['ename'].errors?.['pattern']" style="color: red;">Plz fill a valid ename</span>
+    <br/>
+    <input type="submit" [disabled]="emprform.invalid"/><br/>
+</form>
+
+<button (click)="setvalue()">setvalue</button>
+<button (click)="patchvalue()">patchvalue</button>

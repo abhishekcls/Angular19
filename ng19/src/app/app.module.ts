@@ -5,12 +5,25 @@ import { AnotherComponent } from "./another.component";
 import { NestedComponent } from "./nested.component";
 import { GenderPipe } from "./gender.pipe";
 import { TaxPipe } from "./tax.pipe";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { TformComponent } from './tform/tform.component';
+import { RformComponent } from './rform/rform.component';
+import { DemoPipe } from './demo.pipe';
+import { provideHttpClient } from "@angular/common/http";
+import { CallapiComponent } from './callapi/callapi.component';
+import { DetailapiComponent } from './detailapi/detailapi.component';
 
 @NgModule({
-    imports:[BrowserModule],
+    imports:[BrowserModule,FormsModule,ReactiveFormsModule],
     declarations:[AppComponent,AnotherComponent,NestedComponent,GenderPipe,
-        TaxPipe
+        TaxPipe,
+        TformComponent,
+        RformComponent,
+        DemoPipe,
+        CallapiComponent,
+        DetailapiComponent
     ],
-    bootstrap:[AppComponent,AnotherComponent]
+    bootstrap:[AppComponent,AnotherComponent],
+    providers:[provideHttpClient()]
 })
 export class AppModule{}

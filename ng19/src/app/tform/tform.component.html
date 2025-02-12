@@ -1,0 +1,7 @@
+<h2>Template Form</h2>
+<h3>Hello {{name}}</h3>
+<form #empform="ngForm" (ngSubmit)="submit(empform.value)">
+    <input type="text" placeholder="eid" name="eid" ngModel required/><br/>
+    <input type="text" placeholder="ename" name="ename" [(ngModel)]="name"/><br/>
+    <input type="submit" [disabled]="empform.invalid"/><br/>
+</form>
