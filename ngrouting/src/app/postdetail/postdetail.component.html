@@ -1,0 +1,12 @@
+<h2>Postdetail of {{id}}!</h2>
+
+<ul *ngIf="post; else load">
+    <li>{{post.id}}</li>
+    <li>{{post.title}}</li>
+    <li>{{post.userId}}</li>
+    <li>{{post.body}}</li>
+</ul>
+
+<ng-template #load>
+    <img src="https://hoodielab.com/wp-content/uploads/2022/02/loading-gif.gif" height="200" width="200"/>
+</ng-template>

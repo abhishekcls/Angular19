@@ -7,6 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { PnfComponent } from './pnf/pnf.component';
 import { UserComponent } from './user/user.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { Userdetail2Component } from './userdetail2/userdetail2.component';
+import { PostComponent } from './post/post.component';
+import { PostdetailComponent } from './postdetail/postdetail.component';
+import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +20,18 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
     HomeComponent,
     PnfComponent,
     UserComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    Userdetail2Component,
+    PostComponent,
+    PostdetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

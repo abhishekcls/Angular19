@@ -1,0 +1,21 @@
+<h1>Posts</h1>
+
+<form #postform="ngForm" (ngSubmit)="submit(postform.value)">
+    <input type="number" placeholder="id" name="id" ngModel required/><br/>
+    <input type="text" placeholder="title" name="title" ngModel required=""/><br/>
+    <input type="number" placeholder="userId" name="userId" ngModel required/><br/>
+    <input type="text" placeholder="body" name="body" ngModel required=""/><br/>
+    <input type="reset"/>
+    <input type="submit" [disabled]="postform.invalid"/><br/>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Post</th>
+    </tr>
+    <tr *ngFor="let p of posts">
+        <td>{{p.id}}</td>
+        <td><a routerLink="/post/{{p.id}}">{{p.title | slice:0:20}}</a></td>
+    </tr>
+</table>

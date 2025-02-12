@@ -1,0 +1,6 @@
+<h2>Login</h2>
+<form #loginform="ngForm" (ngSubmit)="submit(loginform.value)">
+    <input type="text" placeholder="uid" name="uid" ngModel required/><br/>
+    <input type="password" placeholder="password" name="pass" ngModel/><br/>
+    <input type="submit" [disabled]="loginform.invalid"/><br/>
+</form>
