@@ -10,9 +10,10 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
 import { Userdetail2Component } from './userdetail2/userdetail2.component';
 import { PostComponent } from './post/post.component';
 import { PostdetailComponent } from './postdetail/postdetail.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { authInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(withInterceptors([authInterceptor]))],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

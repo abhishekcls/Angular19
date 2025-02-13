@@ -14,8 +14,13 @@
         <th>ID</th>
         <th>Post</th>
     </tr>
-    <tr *ngFor="let p of posts">
+    <tr *ngFor="let p of posts" >
         <td>{{p.id}}</td>
         <td><a routerLink="/post/{{p.id}}">{{p.title | slice:0:20}}</a></td>
     </tr>
 </table>
+
+@if(posts.length==0)
+{
+    <img src="https://hoodielab.com/wp-content/uploads/2022/02/loading-gif.gif" height="200" width="200"/>
+}

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Post } from '../models/post';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +10,15 @@ export class PostService {
 
   constructor(private http:HttpClient) { }
 
-  getPosts(){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  getPosts():Observable<Post[]>{
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-  getPostbyID(id:string){
-    return this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  getPostbyID(id:string):Observable<Post>{
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 
-  savePost(post:any){
-    return this.http.post('https://jsonplaceholder.typicode.com/posts',post);
+  savePost(post:Post):Observable<Post>{
+    return this.http.post<Post>('https://jsonplaceholder.typicode.com/posts',post);
   }
 }
