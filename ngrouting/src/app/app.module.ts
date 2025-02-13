@@ -14,6 +14,9 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { authInterceptor } from './auth.interceptor';
+import { AdminComponent } from './admin/admin.component';
+import { C1Component } from './admin/c1/c1.component';
+import { C2Component } from './admin/c2/c2.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { authInterceptor } from './auth.interceptor';
     Userdetail2Component,
     PostComponent,
     PostdetailComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    C1Component,
+    C2Component
   ],
   imports: [
     BrowserModule,

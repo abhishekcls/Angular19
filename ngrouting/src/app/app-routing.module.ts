@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'user/:id/:name',component:Userdetail2Component},
   {path:'post',component:PostComponent,canActivate:[authGuard]},
   {path:'post/:id',component:PostdetailComponent},
+  {path:'admin',loadChildren:()=>import('./admin.module').then(m=>m.AdminModule)},
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'**',component:PnfComponent}
 ];
