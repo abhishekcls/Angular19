@@ -1,0 +1,33 @@
+<h1>Posts</h1>
+
+<form #postform="ngForm" (ngSubmit)="submit(postform.value)">
+    <input type="number" placeholder="id" name="id" ngModel required/><br/>
+    <input type="text" placeholder="title" name="title" ngModel required=""/><br/>
+    <input type="number" placeholder="userId" name="userId" ngModel required/><br/>
+    <input type="text" placeholder="body" name="body" ngModel required=""/><br/>
+    <input type="reset"/>
+    <input type="submit" [disabled]="postform.invalid"/><br/>
+</form>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let p of posts" >
+        <td scope="row">{{p.id}}</td>
+        <td><a routerLink="/post/{{p.id}}">{{p.title | slice:0:20}}</a></td>
+        <td>{{p.body}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+@if(posts.length==0)
+{
+    <img src="https://hoodielab.com/wp-content/uploads/2022/02/loading-gif.gif" height="200" width="200"/>
+}
